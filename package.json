@@ -1,0 +1,23 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "quick app to explore nodeJS,  APIs, and the joys of asynchronous programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smh7/weather-app.git"
+  },
+  "keywords": [],
+  "author": "Steven M Howard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smh7/weather-app/issues"
+  },
+  "homepage": "https://github.com/smh7/weather-app#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1"
+  }
+}
