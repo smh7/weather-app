@@ -15,19 +15,19 @@ const geocode = require('./geocode/geocode.js');
 // line 32 is working, seeking to get the rest working now
 
 const titleOptions = {
-  describe: 'Title of song',
+  describe: 'title-of-song',
   demand: true,
   alias: 't'
 };
-const bodyOptions = {
-  describe: 'Body of note',
+const artistOptions = {
+  describe: 'by-Artist',
   demand: true,
-  alias: 'b'
+  alias: 'by'
 };
 const argv = yargs
-  .command('spotify', 'Add a new note', {
+  .command('spotify', 'play a by specifying song and/or artist', {
     title: titleOptions,
-    body: bodyOptions
+    artist: artistOptions
   })
   .command('tweets', 'List a set of my recent')
   .command('read', 'Read a note', {
@@ -46,8 +46,8 @@ switch(command){
   case "my-tweets":
     console.log('tweetsville');
     break;
-  case "spotify-this-song":
-    console.log('spotify');
+  case "spotify":
+    console.log('spotify', argv.title, argv.artist);
     break;
   case "movie-this":
     console.log('omdb');
