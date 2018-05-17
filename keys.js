@@ -17,3 +17,6 @@ exports.googlemaps = {
   apikey: process.env.API_KEY,
 }
 
+exports.omdb = {
+  omdbkey: process.env.OMDB_ACCESS_KEY,
+}
