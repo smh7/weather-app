@@ -43,7 +43,7 @@ var command = argv._[0];
 // address line 58 is something I'm playing with not part of assignment
 
 switch(command){
-  case "add":
+  case "my-tweets":
     console.log('tweetsville');
     break;
   case "spotify-this-song":
