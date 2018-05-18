@@ -1,12 +1,11 @@
-console.log('starting liri')
-
+// liri
 const dotenv = require("dotenv").config();
 const fs = require('fs');
 const _ = require('lodash');
 const yargs = require('yargs');
 
 const keys = require('./keys');
-// const spotify = require('./spotify.js');
+const spotify = require('./spotify.js');
 const omdb = require('./omdb.js');
 const twitter = require('./twitter.js');
 const what = require('./what.js');
@@ -15,14 +14,9 @@ const geocode = require('./geocode/geocode.js');
 // line 32 is working, seeking to get the rest working now
 
 const titleOptions = {
-  describe: 'title-of-song',
+  describe: 'title-of-song or track, in quotes please',
   demand: true,
   alias: 't'
-};
-const artistOptions = {
-  describe: 'by-Artist',
-  demand: true,
-  alias: 'by'
 };
 const movieTitle = {
   describe: 'title-of-movie',
@@ -30,14 +24,10 @@ const movieTitle = {
   alias: 'm'
 }
 const argv = yargs
-  .command('spotify', 'play a by specifying song and/or artist', {
-    title: titleOptions,
-    artist: artistOptions
+  .command('spotify-this-song', 'find additional info re: track', {
+    title: titleOptions
   })
   .command('my-tweets', 'List a set of my recent')
-  .command('read', 'Read a note', {
-    title: titleOptions,
-  })
   .command('movie-this', 'Input Movie Name to get Info', {
     movie: movieTitle
   })
@@ -52,8 +42,8 @@ switch(command){
     console.log('Your Recent Tweets Are: ');
     twitter.twitterReadMyTweets();
     break;
-  case "spotify":
-    console.log('spotify', argv.title, argv.artist);
+  case "spotify-this-song":
+    spotify.spotifySong(argv.title);
     break;
   case "movie-this":
     console.log('omdb', argv.movie);
