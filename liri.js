@@ -6,7 +6,7 @@ const _ = require('lodash');
 const yargs = require('yargs');
 
 const keys = require('./keys');
-const spotify = require('./spotify.js');
+// const spotify = require('./spotify.js');
 const omdb = require('./omdb.js');
 const twitter = require('./twitter.js');
 const what = require('./what.js');
@@ -24,17 +24,22 @@ const artistOptions = {
   demand: true,
   alias: 'by'
 };
+const movieTitle = {
+  describe: 'title-of-movie',
+  demand: true,
+  alias: 'm'
+}
 const argv = yargs
   .command('spotify', 'play a by specifying song and/or artist', {
     title: titleOptions,
     artist: artistOptions
   })
-  .command('tweets', 'List a set of my recent')
+  .command('my-tweets', 'List a set of my recent')
   .command('read', 'Read a note', {
     title: titleOptions,
   })
-  .command('remove', 'Remove a note', {
-    title: titleOptions
+  .command('movie-this', 'Input Movie Name to get Info', {
+    movie: movieTitle
   })
   .help()
   .argv;
@@ -44,13 +49,15 @@ var command = argv._[0];
 
 switch(command){
   case "my-tweets":
-    console.log('tweetsville');
+    console.log('Your Recent Tweets Are: ');
+    twitter.twitterReadMyTweets();
     break;
   case "spotify":
     console.log('spotify', argv.title, argv.artist);
     break;
   case "movie-this":
-    console.log('omdb');
+    console.log('omdb', argv.movie);
+    omdb.omdbRequestInfo(argv.movie);
     break;
   case "do-what":
     console.log('do-what');
