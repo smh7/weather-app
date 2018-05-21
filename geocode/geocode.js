@@ -4,7 +4,6 @@ const yargs = require('yargs');
 
 // Encoding the string we'll use for the URL
 
-
 var geocodeAddress =  (address, callback) => {
   var encodedAddress = encodeURIComponent(address);
  

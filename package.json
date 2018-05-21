@@ -1,5 +1,5 @@
 {
-  "name": "weather-app",
+  "name": "liri-app",
   "version": "1.0.0",
   "description": "quick app to explore nodeJS,  APIs, and the joys of asynchronous programming",
   "main": "index.js",
@@ -26,6 +26,7 @@
     "request": "^2.86.0",
     "twitter": "^1.7.1",
     "util": "^0.10.3",
+    "weather-js": "^2.0.0",
     "yargs": "^4.7.1"
   }
 }

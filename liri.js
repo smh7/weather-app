@@ -10,6 +10,7 @@ const omdb = require('./omdb.js');
 const twitter = require('./twitter.js');
 const what = require('./what.js');
 const geocode = require('./geocode/geocode.js');
+const weather = require('weather-js');
 
 // line 32 is working, seeking to get the rest working now
 
@@ -22,6 +23,11 @@ const movieTitle = {
   describe: 'title-of-movie',
   demand: true,
   alias: 'm'
+};
+const locationUI = {
+  describe: 'location zip or city state or address in quotes if > zip code',
+  demand: true,
+  alias: 'a'
 }
 const argv = yargs
   .command('spotify-this-song', 'find additional info re: track', {
@@ -30,6 +36,9 @@ const argv = yargs
   .command('my-tweets', 'List a set of my recent')
   .command('movie-this', 'Input Movie Name to get Info', {
     movie: movieTitle
+  })
+  .command("address", 'Input location get coordinates', {
+    location: locationUI
   })
   .help()
   .argv;

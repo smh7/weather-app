@@ -1,5 +1,6 @@
 const keys = require('./keys');
 const yargs = require('yargs');
+const weather = require('weather-js');
 
 
 const geocode = require('./geocode/geocode.js');
@@ -26,4 +27,3 @@ geocode.geocodeAddress(argv.a, (errorMessage, results) => {
     console.log(JSON.stringify(results, undefined, 2));
   }
 });
-
