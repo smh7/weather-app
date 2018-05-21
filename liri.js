@@ -34,6 +34,7 @@ const argv = yargs
     title: titleOptions
   })
   .command('my-tweets', 'List a set of my recent')
+  .command('do-what-it-says', 'read text file and execute command')  
   .command('movie-this', 'Input Movie Name to get Info', {
     movie: movieTitle
   })
@@ -58,8 +59,9 @@ switch(command){
     console.log('omdb', argv.movie);
     omdb.omdbRequestInfo(argv.movie);
     break;
-  case "do-what":
-    console.log('do-what');
+  case "do-what-it-says":
+    console.log('do-what-it-says');
+    what.whatItSays();
     break;
   case "address" || "a":
       geocode.geocodeAddress(argv.a, (errorMessage, results) => {
