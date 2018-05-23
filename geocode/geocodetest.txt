@@ -1,0 +1,5 @@
+{
+  "address": "175 Parrott Ave, Portsmouth, NH 03801, USA",
+  "lattitude": 43.0718974,
+  "longitude": -70.7595599
+}
