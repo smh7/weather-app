@@ -27,6 +27,9 @@ prerequisite: need to have a .env file at the same level as this README file, wi
 * API_KEY - if using address functionality
 
 # Available Command Line options
+`node liri.js --help`
+  This will return a list of options available in the application
+
 `node liri.js my-tweets`
   This will return a set of tweets related to my account
 

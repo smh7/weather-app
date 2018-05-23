@@ -2,9 +2,6 @@ const geocode = require('./geocode');
 const fs = require('fs');
 
 
-  
-// })
-
 it('should geocode address', (done) => {
 var results = geocode.geocodeAddress('175 Parrott Ave, Portsmouth, NH 03801');
  console.log('made it here')
@@ -23,14 +20,3 @@ var results = geocode.geocodeAddress('175 Parrott Ave, Portsmouth, NH 03801');
     throw new Error(`Expected lat = 43.07 and long -70 but got ${data}`)
   }
 });
-
-
-// it('should return true', () => {
-//   var res = true;
-//   var taco =  geocode.geocodeAddress("175 Parrott Ave, Portsmouth, NH 03801");
-//   console.log(taco);
-
-//   if(res === false) {
-//     throw new Error(`Expected but got`);
-//   }
-// })

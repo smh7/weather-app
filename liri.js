@@ -30,15 +30,15 @@ const locationUI = {
   alias: 'a'
 }
 const argv = yargs
-  .command('spotify-this-song', 'find additional info re: track', {
+  .command('spotify-this-song', "use -t 'songname' ", {
     title: titleOptions
   })
-  .command('my-tweets', 'List a set of my recent')
-  .command('do-what-it-says', 'read text file and execute command')  
-  .command('movie-this', 'Input Movie Name to get Info', {
+  .command('my-tweets', 'List a set of my recent tweets')
+  .command('do-what-it-says', 'read text file and see what is in the file')  
+  .command('movie-this', "use -m 'title of movie' ", {
     movie: movieTitle
   })
-  .command("address", 'Input location get coordinates', {
+  .command("address", "use -a 'address' to get latittude and longitude", {
     location: locationUI
   })
   .help()
