@@ -23,7 +23,7 @@
     "node-fetch": "^2.1.2",
     "node-spotify-api": "^1.0.7",
     "omdb-client": "^2.0.0",
-    "request": "^2.86.0",
+    "request": "^2.87.0",
     "twitter": "^1.7.1",
     "util": "^0.10.3",
     "weather-js": "^2.0.0",
